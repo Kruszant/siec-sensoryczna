@@ -1,0 +1,90 @@
+czas,t_sym,typ,wezel,sensor,opis
+16:42:43,0.02,wezel_dolaczyl,1,,Węzeł 1 dołączył do sieci (port 5001)
+16:42:43,0.02,wezel_dolaczyl,2,,Węzeł 2 dołączył do sieci (port 5002)
+16:42:43,0.02,wezel_dolaczyl,3,,Węzeł 3 dołączył do sieci (port 5003)
+16:42:43,0.03,wezel_dolaczyl,4,,Węzeł 4 dołączył do sieci (port 5004)
+16:42:43,0.03,wezel_odrzucony,5,,ODRZUCONO węzeł 5: osiągnięto limit 4 węzłów
+16:42:43,0.03,sensor_przylaczony,1,1,Sensor 001 przyłączony do węzła 1
+16:42:43,0.34,sensor_przylaczony,1,2,Sensor 002 przyłączony do węzła 1
+16:42:44,0.67,sensor_przylaczony,3,3,Sensor 003 przyłączony do węzła 3
+16:42:44,0.99,sensor_przylaczony,4,4,Sensor 004 przyłączony do węzła 4
+16:42:44,1.32,sensor_przylaczony,1,5,Sensor 005 przyłączony do węzła 1
+16:42:44,1.65,sensor_przylaczony,4,6,Sensor 006 przyłączony do węzła 4
+16:42:44,4.04,sensor_odlaczony,4,4,Sensor 004 odłączony od węzła 4
+16:42:45,9.14,sensor_przeniesiony,2,4,Sensor 004 PRZENIESIONY: węzeł 4 -> 2
+16:42:46,11.23,sensor_odlaczony,1,1,Sensor 001 odłączony od węzła 1
+16:42:47,16.36,sensor_przeniesiony,4,1,Sensor 001 PRZENIESIONY: węzeł 1 -> 4
+16:42:47,19.04,sensor_odlaczony,3,3,Sensor 003 odłączony od węzła 3
+16:42:48,23.47,sensor_odlaczony,4,1,Sensor 001 odłączony od węzła 4
+16:42:48,23.76,sensor_odlaczony,1,5,Sensor 005 odłączony od węzła 1
+16:42:48,25.13,sensor_przeniesiony,1,3,Sensor 003 PRZENIESIONY: węzeł 3 -> 1
+16:42:49,29.92,sensor_przeniesiony,2,5,Sensor 005 PRZENIESIONY: węzeł 1 -> 2
+16:42:49,30.61,sensor_przeniesiony,3,1,Sensor 001 PRZENIESIONY: węzeł 4 -> 3
+16:42:53,48.29,sensor_odlaczony,2,5,Sensor 005 odłączony od węzła 2
+16:42:54,54.44,sensor_przeniesiony,3,5,Sensor 005 PRZENIESIONY: węzeł 2 -> 3
+16:43:00,82.86,sensor_odlaczony,2,4,Sensor 004 odłączony od węzła 2
+16:43:00,82.87,wezel_opuscil,2,,Węzeł 2 opuścił sieć
+16:43:00,83.89,sensor_odlaczony,1,2,Sensor 002 odłączony od węzła 1
+16:43:01,88.57,sensor_przeniesiony,1,4,Sensor 004 PRZENIESIONY: węzeł 2 -> 1
+16:43:01,90.01,sensor_przeniesiony,3,2,Sensor 002 PRZENIESIONY: węzeł 1 -> 3
+16:43:03,96.37,sensor_odlaczony,4,6,Sensor 006 odłączony od węzła 4
+16:43:03,99.82,sensor_odlaczony,3,1,Sensor 001 odłączony od węzła 3
+16:43:04,101.49,sensor_przeniesiony,3,6,Sensor 006 PRZENIESIONY: węzeł 4 -> 3
+16:43:04,101.76,sensor_odlaczony,1,4,Sensor 004 odłączony od węzła 1
+16:43:04,104.82,sensor_przeniesiony,3,4,Sensor 004 PRZENIESIONY: węzeł 1 -> 3
+16:43:05,105.97,sensor_przeniesiony,1,1,Sensor 001 PRZENIESIONY: węzeł 3 -> 1
+16:43:07,119.07,sensor_odlaczony,1,3,Sensor 003 odłączony od węzła 1
+16:43:08,123.18,sensor_przeniesiony,4,3,Sensor 003 PRZENIESIONY: węzeł 1 -> 4
+16:43:10,131.06,sensor_odlaczony,3,6,Sensor 006 odłączony od węzła 3
+16:43:10,132.93,wezel_dolaczyl,2,,Węzeł 2 dołączył do sieci (port 5002)
+16:43:10,134.5,sensor_odlaczony,1,1,Sensor 001 odłączony od węzła 1
+16:43:11,136.16,sensor_przeniesiony,1,6,Sensor 006 PRZENIESIONY: węzeł 3 -> 1
+16:43:11,137.57,sensor_przeniesiony,3,1,Sensor 001 PRZENIESIONY: węzeł 1 -> 3
+16:43:13,148.39,sensor_odlaczony,1,6,Sensor 006 odłączony od węzła 1
+16:43:14,153.14,sensor_odlaczony,3,2,Sensor 002 odłączony od węzła 3
+16:43:14,154.49,sensor_przeniesiony,4,6,Sensor 006 PRZENIESIONY: węzeł 1 -> 4
+16:43:15,158.26,sensor_przeniesiony,1,2,Sensor 002 PRZENIESIONY: węzeł 3 -> 1
+16:43:16,163.04,sensor_odlaczony,3,1,Sensor 001 odłączony od węzła 3
+16:43:17,166.12,sensor_przeniesiony,4,1,Sensor 001 PRZENIESIONY: węzeł 3 -> 4
+16:43:18,172.17,sensor_odlaczony,4,3,Sensor 003 odłączony od węzła 4
+16:43:18,172.17,sensor_przeniesiony,1,3,Sensor 003 PRZENIESIONY: węzeł 4 -> 1
+16:43:21,185.72,sensor_odlaczony,1,2,Sensor 002 odłączony od węzła 1
+16:43:22,191.84,sensor_przeniesiony,2,2,Sensor 002 PRZENIESIONY: węzeł 1 -> 2
+16:43:22,193.57,sensor_odlaczony,1,3,Sensor 003 odłączony od węzła 1
+16:43:24,200.71,sensor_przylaczony,1,3,Sensor 003 przyłączony do węzła 1
+16:43:26,214.05,sensor_odlaczony,4,1,Sensor 001 odłączony od węzła 4
+16:43:27,218.3,sensor_odlaczony,2,2,Sensor 002 odłączony od węzła 2
+16:43:27,219.13,sensor_przeniesiony,2,1,Sensor 001 PRZENIESIONY: węzeł 4 -> 2
+16:43:28,221.17,sensor_odlaczony,2,1,Sensor 001 odłączony od węzła 2
+16:43:28,222.4,sensor_odlaczony,3,5,Sensor 005 odłączony od węzła 3
+16:43:28,224.24,sensor_przeniesiony,3,1,Sensor 001 PRZENIESIONY: węzeł 2 -> 3
+16:43:28,224.41,sensor_przeniesiony,1,2,Sensor 002 PRZENIESIONY: węzeł 2 -> 1
+16:43:29,226.14,sensor_odlaczony,1,3,Sensor 003 odłączony od węzła 1
+16:43:30,232.24,sensor_przeniesiony,2,3,Sensor 003 PRZENIESIONY: węzeł 1 -> 2
+16:43:30,235.28,sensor_odlaczony,2,3,Sensor 003 odłączony od węzła 2
+16:43:30,235.59,sensor_odlaczony,1,2,Sensor 002 odłączony od węzła 1
+16:43:31,238.67,sensor_przeniesiony,3,2,Sensor 002 PRZENIESIONY: węzeł 1 -> 3
+16:43:31,240.39,sensor_przeniesiony,1,3,Sensor 003 PRZENIESIONY: węzeł 2 -> 1
+16:43:33,247.86,sensor_przeniesiony,1,5,Sensor 005 PRZENIESIONY: węzeł 3 -> 1
+16:43:33,248.43,sensor_odlaczony,3,4,Sensor 004 odłączony od węzła 3
+16:43:34,250.93,sensor_odlaczony,1,5,Sensor 005 odłączony od węzła 1
+16:43:34,251.46,sensor_przeniesiony,4,4,Sensor 004 PRZENIESIONY: węzeł 3 -> 4
+16:43:34,255.01,sensor_przeniesiony,3,5,Sensor 005 PRZENIESIONY: węzeł 1 -> 3
+16:43:35,257.69,sensor_odlaczony,1,3,Sensor 003 odłączony od węzła 1
+16:43:36,263.83,sensor_przeniesiony,3,3,Sensor 003 PRZENIESIONY: węzeł 1 -> 3
+16:43:38,271.94,sensor_odlaczony,3,3,Sensor 003 odłączony od węzła 3
+16:43:38,275.01,sensor_przeniesiony,1,3,Sensor 003 PRZENIESIONY: węzeł 3 -> 1
+16:43:39,279.23,sensor_odlaczony,3,1,Sensor 001 odłączony od węzła 3
+16:43:40,283.31,sensor_przeniesiony,1,1,Sensor 001 PRZENIESIONY: węzeł 3 -> 1
+16:43:42,292.31,sensor_odlaczony,1,3,Sensor 003 odłączony od węzła 1
+16:43:43,298.43,sensor_przeniesiony,2,3,Sensor 003 PRZENIESIONY: węzeł 1 -> 2
+16:43:44,300.85,sensor_odlaczony,3,5,Sensor 005 odłączony od węzła 3
+16:43:44,301.99,sensor_odlaczony,3,2,Sensor 002 odłączony od węzła 3
+16:43:44,301.99,sensor_odlaczony,1,1,Sensor 001 odłączony od węzła 1
+16:43:44,302.0,sensor_odlaczony,2,3,Sensor 003 odłączony od węzła 2
+16:43:44,302.0,sensor_odlaczony,4,4,Sensor 004 odłączony od węzła 4
+16:43:44,302.0,sensor_odlaczony,4,6,Sensor 006 odłączony od węzła 4
+16:43:44,302.18,wezel_opuscil,1,,Węzeł 1 opuścił sieć
+16:43:44,302.26,wezel_opuscil,2,,Węzeł 2 opuścił sieć
+16:43:44,302.28,wezel_opuscil,3,,Węzeł 3 opuścił sieć
+16:43:44,302.28,wezel_opuscil,4,,Węzeł 4 opuścił sieć

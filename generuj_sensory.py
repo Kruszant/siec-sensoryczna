@@ -22,8 +22,8 @@ OKRES_PROBKOWANIA=1.0     # pomiar co 1 s
 # --- STEROWANIE RĘCZNE (sensor czyta ten plik co sekundę) ---
 POLACZONY=1               # 1 = przyłączony, 0 = odłącz sensor od węzła
 WEZEL=0                   # 0 = dowolny węzeł, 1..4 = przyłącz / przenieś do tego węzła
-# --- opcjonalne odłączanie w losowych chwilach (0 = wyłączone) ---
-P_ODLACZENIA=0            # prawdopodobieństwo odłączenia w każdej sekundzie
+# --- odłączanie sensora w losowych chwilach (awarie) ---
+P_ODLACZENIA=0.02         # prawdopodobieństwo losowego odłączenia w każdej sekundzie (0 = wyłączone)
 CZAS_ODLACZENIA_MIN=3     # [s]
 CZAS_ODLACZENIA_MAX=8     # [s]
 PRZENOSZENIE=1            # 1 = po odłączeniu przyłącz do innego węzła
@@ -63,5 +63,6 @@ def generate(n: int, folder: str = "sensors", seed=None):
 
 
 if __name__ == "__main__":
-    for p in generate_nodes() + generate(int(sys.argv[1]) if len(sys.argv) > 1 else 6):
+    # stały seed -> te same parametry sensorów przy każdym wygenerowaniu (powtarzalność)
+    for p in generate_nodes() + generate(int(sys.argv[1]) if len(sys.argv) > 1 else 6, seed=1009):
         print("utworzono", p)

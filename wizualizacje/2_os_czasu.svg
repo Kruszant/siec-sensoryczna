@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 460" style="max-width:1040px;width:100%"><style>
+text{font-family:Helvetica,Arial,sans-serif;fill:#333} .h{font-size:17px;font-weight:bold}
+.s{font-size:11px;fill:#555} .a{font-size:10px;fill:#555} .g{stroke:#e4e4e4}
+.f{fill:none;stroke:#999} .b{font-size:12px;font-weight:bold}
+</style><rect width="100%" height="100%" fill="#fff"/>
+<text x="90" y="26" class="h">Oś czasu: gdzie był każdy sensor, awarie i przeniesienia</text>
+<text x="90" y="44" class="s">Kolor odcinka = węzeł, który odbierał dane. Przerwa = sensor odłączony (losowo lub ręcznie). ▲ = przeniesienie do innego węzła. Szary pas = węzeł wyłączony.</text>
+<rect x="90" y="56" width="14" height="10" fill="#1f77b4"/><text x="110" y="65" class="a">węzeł 1</text>
+<rect x="180" y="56" width="14" height="10" fill="#ff7f0e"/><text x="200" y="65" class="a">węzeł 2</text>
+<rect x="270" y="56" width="14" height="10" fill="#2ca02c"/><text x="290" y="65" class="a">węzeł 3</text>
+<rect x="360" y="56" width="14" height="10" fill="#d62728"/><text x="380" y="65" class="a">węzeł 4</text>
+<line x1="90.0" x2="90.0" y1="84" y2="404" class="g"/><text x="90.0" y="418" class="a" text-anchor="middle">0</text>
+<line x1="168.3" x2="168.3" y1="84" y2="404" class="g"/><text x="168.3" y="418" class="a" text-anchor="middle">25</text>
+<line x1="246.6" x2="246.6" y1="84" y2="404" class="g"/><text x="246.6" y="418" class="a" text-anchor="middle">50</text>
+<line x1="324.8" x2="324.8" y1="84" y2="404" class="g"/><text x="324.8" y="418" class="a" text-anchor="middle">75</text>
+<line x1="403.1" x2="403.1" y1="84" y2="404" class="g"/><text x="403.1" y="418" class="a" text-anchor="middle">100</text>
+<line x1="481.4" x2="481.4" y1="84" y2="404" class="g"/><text x="481.4" y="418" class="a" text-anchor="middle">125</text>
+<line x1="559.7" x2="559.7" y1="84" y2="404" class="g"/><text x="559.7" y="418" class="a" text-anchor="middle">150</text>
+<line x1="638.0" x2="638.0" y1="84" y2="404" class="g"/><text x="638.0" y="418" class="a" text-anchor="middle">175</text>
+<line x1="716.3" x2="716.3" y1="84" y2="404" class="g"/><text x="716.3" y="418" class="a" text-anchor="middle">200</text>
+<line x1="794.5" x2="794.5" y1="84" y2="404" class="g"/><text x="794.5" y="418" class="a" text-anchor="middle">225</text>
+<line x1="872.8" x2="872.8" y1="84" y2="404" class="g"/><text x="872.8" y="418" class="a" text-anchor="middle">250</text>
+<line x1="951.1" x2="951.1" y1="84" y2="404" class="g"/><text x="951.1" y="418" class="a" text-anchor="middle">275</text>
+<rect x="349.5" y="84" width="156.8" height="176" fill="#bbbbbb" opacity="0.35"/><text x="352.5" y="80" class="a">węzeł 2 wyłączony</text>
+<rect x="1036.5" y="84" width="-16.5" height="176" fill="#bbbbbb" opacity="0.35"/><text x="1039.5" y="80" class="a">węzeł 2 wyłączony</text>
+<rect x="1036.2" y="84" width="-16.2" height="176" fill="#bbbbbb" opacity="0.35"/><text x="1039.2" y="80" class="a">węzeł 1 wyłączony</text>
+<rect x="1036.5" y="84" width="-16.5" height="176" fill="#bbbbbb" opacity="0.35"/><text x="1039.5" y="80" class="a">węzeł 3 wyłączony</text>
+<rect x="1036.5" y="84" width="-16.5" height="176" fill="#bbbbbb" opacity="0.35"/><text x="1039.5" y="80" class="a">węzeł 4 wyłączony</text>
+<text x="82" y="104" class="b" text-anchor="end">Sensor 001</text>
+<rect x="93.1" y="94" width="31.3" height="14" fill="#1f77b4"/>
+<rect x="143.2" y="94" width="18.8" height="14" fill="#d62728"/>
+<rect x="187.1" y="94" width="209.8" height="14" fill="#2ca02c"/>
+<rect x="418.8" y="94" width="84.5" height="14" fill="#1f77b4"/>
+<rect x="515.9" y="94" width="75.2" height="14" fill="#2ca02c"/>
+<rect x="603.5" y="94" width="144.0" height="14" fill="#d62728"/>
+<rect x="766.4" y="94" width="3.1" height="14" fill="#ff7f0e"/>
+<rect x="782.0" y="94" width="166.0" height="14" fill="#2ca02c"/>
+<rect x="963.6" y="94" width="56.4" height="14" fill="#1f77b4"/>
+<path d="M143.2 91 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M187.1 91 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M418.8 91 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M515.9 91 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M603.5 91 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M766.4 91 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M782.0 91 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M963.6 91 l-4 -7 l8 0 z" fill="#111"/>
+<text x="82" y="132" class="b" text-anchor="end">Sensor 002</text>
+<rect x="93.1" y="122" width="253.6" height="14" fill="#1f77b4"/>
+<rect x="368.7" y="122" width="191.0" height="14" fill="#2ca02c"/>
+<rect x="578.5" y="122" width="81.4" height="14" fill="#1f77b4"/>
+<rect x="681.8" y="122" width="78.3" height="14" fill="#ff7f0e"/>
+<rect x="782.0" y="122" width="31.3" height="14" fill="#1f77b4"/>
+<rect x="825.9" y="122" width="194.1" height="14" fill="#2ca02c"/>
+<path d="M368.7 119 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M578.5 119 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M681.8 119 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M782.0 119 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M825.9 119 l-4 -7 l8 0 z" fill="#111"/>
+<text x="82" y="160" class="b" text-anchor="end">Sensor 003</text>
+<rect x="93.1" y="150" width="53.2" height="14" fill="#2ca02c"/>
+<rect x="168.3" y="150" width="284.9" height="14" fill="#1f77b4"/>
+<rect x="468.9" y="150" width="147.2" height="14" fill="#d62728"/>
+<rect x="619.2" y="150" width="62.6" height="14" fill="#1f77b4"/>
+<rect x="706.9" y="150" width="75.2" height="14" fill="#1f77b4"/>
+<rect x="803.9" y="150" width="6.3" height="14" fill="#ff7f0e"/>
+<rect x="829.0" y="150" width="50.1" height="14" fill="#1f77b4"/>
+<rect x="901.0" y="150" width="21.9" height="14" fill="#2ca02c"/>
+<rect x="935.5" y="150" width="50.1" height="14" fill="#1f77b4"/>
+<rect x="1007.5" y="150" width="9.4" height="14" fill="#ff7f0e"/>
+<path d="M168.3 147 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M468.9 147 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M619.2 147 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M803.9 147 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M829.0 147 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M901.0 147 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M935.5 147 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M1007.5 147 l-4 -7 l8 0 z" fill="#111"/>
+<text x="82" y="188" class="b" text-anchor="end">Sensor 004</text>
+<rect x="93.1" y="178" width="6.3" height="14" fill="#d62728"/>
+<rect x="118.2" y="178" width="225.5" height="14" fill="#ff7f0e"/>
+<rect x="362.4" y="178" width="37.6" height="14" fill="#1f77b4"/>
+<rect x="412.5" y="178" width="438.4" height="14" fill="#2ca02c"/>
+<rect x="863.4" y="178" width="153.4" height="14" fill="#d62728"/>
+<path d="M118.2 175 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M362.4 175 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M412.5 175 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M863.4 175 l-4 -7 l8 0 z" fill="#111"/>
+<text x="82" y="216" class="b" text-anchor="end">Sensor 005</text>
+<rect x="93.1" y="206" width="65.8" height="14" fill="#1f77b4"/>
+<rect x="180.8" y="206" width="53.2" height="14" fill="#ff7f0e"/>
+<rect x="256.0" y="206" width="513.5" height="14" fill="#2ca02c"/>
+<rect x="850.9" y="206" width="6.3" height="14" fill="#1f77b4"/>
+<rect x="872.8" y="206" width="137.8" height="14" fill="#2ca02c"/>
+<path d="M180.8 203 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M256.0 203 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M850.9 203 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M872.8 203 l-4 -7 l8 0 z" fill="#111"/>
+<text x="82" y="244" class="b" text-anchor="end">Sensor 006</text>
+<rect x="93.1" y="234" width="288.1" height="14" fill="#d62728"/>
+<rect x="400.0" y="234" width="87.7" height="14" fill="#2ca02c"/>
+<rect x="506.5" y="234" width="34.4" height="14" fill="#1f77b4"/>
+<rect x="562.8" y="234" width="450.9" height="14" fill="#d62728"/>
+<path d="M400.0 231 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M506.5 231 l-4 -7 l8 0 z" fill="#111"/>
+<path d="M562.8 231 l-4 -7 l8 0 z" fill="#111"/>
+<text x="82" y="284" class="s" text-anchor="end">aktywność węzłów</text>
+<text x="82" y="306" class="b" text-anchor="end">Węzeł 1</text><rect x="90.0" y="298" width="930.0" height="10" fill="#1f77b4" opacity="0.85"/>
+<rect x="1036.2" y="297" width="-16.2" height="12" fill="#fff"/><rect x="1036.2" y="297" width="-16.2" height="12" fill="none" stroke="#1f77b4" stroke-dasharray="3 2"/>
+<text x="82" y="334" class="b" text-anchor="end">Węzeł 2</text><rect x="90.0" y="326" width="930.0" height="10" fill="#ff7f0e" opacity="0.85"/>
+<rect x="349.5" y="325" width="156.8" height="12" fill="#fff"/><rect x="349.5" y="325" width="156.8" height="12" fill="none" stroke="#ff7f0e" stroke-dasharray="3 2"/>
+<rect x="1036.5" y="325" width="-16.5" height="12" fill="#fff"/><rect x="1036.5" y="325" width="-16.5" height="12" fill="none" stroke="#ff7f0e" stroke-dasharray="3 2"/>
+<text x="82" y="362" class="b" text-anchor="end">Węzeł 3</text><rect x="90.0" y="354" width="930.0" height="10" fill="#2ca02c" opacity="0.85"/>
+<rect x="1036.5" y="353" width="-16.5" height="12" fill="#fff"/><rect x="1036.5" y="353" width="-16.5" height="12" fill="none" stroke="#2ca02c" stroke-dasharray="3 2"/>
+<text x="82" y="390" class="b" text-anchor="end">Węzeł 4</text><rect x="90.0" y="382" width="930.0" height="10" fill="#d62728" opacity="0.85"/>
+<rect x="1036.5" y="381" width="-16.5" height="12" fill="#fff"/><rect x="1036.5" y="381" width="-16.5" height="12" fill="none" stroke="#d62728" stroke-dasharray="3 2"/>
+<text x="555.0" y="436" class="a" text-anchor="middle">czas symulacji [s]</text>
+</svg>

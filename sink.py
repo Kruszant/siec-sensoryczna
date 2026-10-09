@@ -4,7 +4,9 @@
 - udostępnia sensorom listę aktywnych węzłów (auto-przyłączenie),
 - odbiera pomiary i pokazuje: NR WĘZŁA, NR SENSORA, PRZESŁANY WYNIK,
 - śledzi przenoszenie sensorów między węzłami oraz ich odłączenia,
-- zapisuje wszystkie pomiary do pliku CSV (pomiary.csv).
+- zapisuje wszystkie pomiary do pliku CSV (pomiary.csv),
+- zapisuje zdarzenia sieci (przyłączenia, odłączenia, przeniesienia, awarie
+  węzłów) do drugiego pliku CSV (zdarzenia.csv) - dane do wizualizacji.
 
 Uruchomienie:  python sink.py            (odświeżany widok w terminalu)
                python sink.py --no-ui    (tylko log zdarzeń)
@@ -21,8 +23,12 @@ from common import HOST, MAX_NODES, SINK_PORT, LineReader, send_msg
 
 class Sink:
     def __init__(self, port: int = SINK_PORT, max_nodes: int = MAX_NODES,
-                 csv_path: str = None, log=None):
+                 csv_path: str = None, log=None, events_path: str = None,
+                 tick: float = 1.0):
         self.port = port
+        self.tick = tick              # długość "sekundy" symulacji (do kolumny t_sym)
+        self.t0 = time.time()         # początek symulacji
+        self.events_path = events_path
         self.max_nodes = max_nodes
         self.nodes = {}       # nr węzła -> {"port": .., "since": ..}
         self.sensors = {}     # nr sensora -> stan ostatniego pomiaru
@@ -34,10 +40,25 @@ class Sink:
         self.server = None
         if csv_path:
             with open(csv_path, "w", newline="", encoding="utf-8") as f:
-                csv.writer(f).writerow(["czas", "wezel", "sensor", "seq", "temperatura"])
+                csv.writer(f).writerow(["czas", "wezel", "sensor", "seq", "temperatura", "t_sym"])
+        if events_path:
+            with open(events_path, "w", newline="", encoding="utf-8") as f:
+                csv.writer(f).writerow(["czas", "t_sym", "typ", "wezel", "sensor", "opis"])
 
-    def event(self, text: str):
+    def t_sym(self, ts: float = None) -> float:
+        """Czas symulacji w "sekundach" (niezależny od skrócenia tick)."""
+        return round(((ts or time.time()) - self.t0) / self.tick, 2)
+
+    def event(self, text: str, kind: str = "info", node=None, sensor=None):
+        """Dopisuje zdarzenie do widoku, do pliku zdarzenia.csv i do logu.
+
+        kind: wezel_dolaczyl | wezel_opuscil | wezel_odrzucony | sensor_przylaczony |
+              sensor_odlaczony | sensor_przeniesiony"""
         line = f"{datetime.now():%H:%M:%S}  {text}"
+        if self.events_path:
+            with self.lock, open(self.events_path, "a", newline="", encoding="utf-8") as f:
+                csv.writer(f).writerow([f"{datetime.now():%H:%M:%S}", self.t_sym(), kind,
+                                        node, sensor, text])
         with self.lock:
             self.events.append(line)
             self.events = self.events[-200:]
@@ -72,10 +93,10 @@ class Sink:
                 self.nodes[nid] = {"port": reg["port"], "since": time.time()}
         if reason:
             send_msg(conn, {"type": "error", "reason": reason})
-            self.event(f"ODRZUCONO węzeł {nid}: {reason}")
+            self.event(f"ODRZUCONO węzeł {nid}: {reason}", "wezel_odrzucony", nid)
             return
         send_msg(conn, {"type": "ok"})
-        self.event(f"Węzeł {nid} dołączył do sieci (port {reg['port']})")
+        self.event(f"Węzeł {nid} dołączył do sieci (port {reg['port']})", "wezel_dolaczyl", nid)
         try:
             while True:
                 msg = reader.read()
@@ -88,7 +109,7 @@ class Sink:
                 for s in self.sensors.values():
                     if s["node"] == nid:
                         s["online"] = False
-            self.event(f"Węzeł {nid} opuścił sieć")
+            self.event(f"Węzeł {nid} opuścił sieć", "wezel_opuscil", nid)
 
     def on_node_msg(self, nid, msg):
         t = msg["type"]
@@ -103,14 +124,15 @@ class Sink:
                     st["moves"] += 1
                 st.update(node=nid, online=True)
             if moved:
-                self.event(f"Sensor {sid:03d} PRZENIESIONY: węzeł {prev_node} -> {nid}")
+                self.event(f"Sensor {sid:03d} PRZENIESIONY: węzeł {prev_node} -> {nid}",
+                           "sensor_przeniesiony", nid, sid)
             else:
-                self.event(f"Sensor {sid:03d} przyłączony do węzła {nid}")
+                self.event(f"Sensor {sid:03d} przyłączony do węzła {nid}", "sensor_przylaczony", nid, sid)
         elif t == "sensor_detached":
             with self.lock:
                 if sid in self.sensors and self.sensors[sid]["node"] == nid:
                     self.sensors[sid]["online"] = False
-            self.event(f"Sensor {sid:03d} odłączony od węzła {nid}")
+            self.event(f"Sensor {sid:03d} odłączony od węzła {nid}", "sensor_odlaczony", nid, sid)
         elif t == "data":
             with self.lock:
                 st = self.sensors.setdefault(sid, {"moves": 0, "count": 0})
@@ -121,7 +143,8 @@ class Sink:
             if self.csv_path:
                 with open(self.csv_path, "a", newline="", encoding="utf-8") as f:
                     csv.writer(f).writerow([f"{datetime.fromtimestamp(msg['ts']):%H:%M:%S}",
-                                            nid, sid, msg["seq"], msg["temp"]])
+                                            nid, sid, msg["seq"], msg["temp"],
+                                            self.t_sym(msg["ts"])])
 
     # --- widok aplikacji ----------------------------------------------------
     def render(self) -> str:
@@ -181,9 +204,11 @@ def main():
     p = argparse.ArgumentParser(description="Zlew sieci sensorycznej")
     p.add_argument("--port", type=int, default=SINK_PORT)
     p.add_argument("--csv", default="pomiary.csv")
+    p.add_argument("--zdarzenia", default="zdarzenia.csv", help="plik CSV ze zdarzeniami")
     p.add_argument("--no-ui", action="store_true", help="bez odświeżanego widoku")
     a = p.parse_args()
-    sink = Sink(a.port, csv_path=a.csv, log=print if a.no_ui else None).start()
+    sink = Sink(a.port, csv_path=a.csv, events_path=a.zdarzenia,
+                log=print if a.no_ui else None).start()
     print(f"Zlew nasłuchuje na porcie {a.port}")
     try:
         while True:

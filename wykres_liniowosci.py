@@ -7,7 +7,7 @@ Dla każdego sensora z pomiary.csv:
     zaokrągleniu do 0.001 °C to maksymalnie ±0.0005.
 W tytule: nachylenie dopasowane vs NACHYLENIE_A z pliku sensora, R² i max reszta.
 
-Użycie: python wykres_liniowosci.py [pomiary.csv] [wynik.svg]
+Użycie: python wykres_liniowosci.py [dane/pomiary.csv] [wizualizacje/1_liniowosc.svg]
 Tylko biblioteka standardowa (wynik to plik SVG - otwórz w przeglądarce).
 """
 import csv
@@ -115,8 +115,8 @@ def panel(sid, pts, ox, oy):
 
 
 def main(argv):
-    csv_path = argv[0] if argv else "pomiary.csv"
-    out_path = argv[1] if len(argv) > 1 else "zrzuty/6_liniowosc.svg"
+    csv_path = argv[0] if argv else "dane/pomiary.csv"
+    out_path = argv[1] if len(argv) > 1 else "wizualizacje/1_liniowosc.svg"
     data = {s: p for s, p in load(csv_path).items() if len(p) >= 3}
     if not data:
         print("Za mało danych w", csv_path)
@@ -139,7 +139,7 @@ def main(argv):
         f'<text x="{ML + 12 + k * 70}" y="66" class="a">węzeł {n}</text>'
         for k, n in enumerate(nodes))
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {total_w} {total_h}" width="{total_w}" font-family="Helvetica, Arial, sans-serif">
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {total_w} {total_h}" style="max-width:{total_w}px;width:100%" font-family="Helvetica, Arial, sans-serif">
 <style>
 .t{{font-size:14px;font-weight:bold;fill:#222}} .s{{font-size:11px;fill:#444}}
 .a{{font-size:10px;fill:#555}} .g{{stroke:#e2e2e2}} .f{{fill:none;stroke:#999}}

@@ -28,7 +28,7 @@ def main():
     a = p.parse_args()
 
     quiet = lambda *_: None
-    sink = Sink(csv_path="pomiary.csv").start()
+    sink = Sink(csv_path="pomiary.csv", events_path="zdarzenia.csv", tick=a.tick).start()
     nodes = []
     for path in sorted(glob.glob(f"{a.wezly}/NODE*.TXT")):
         nodes.append(Node(load_node_file(path)["ID"], log=quiet, path=path,
@@ -58,7 +58,7 @@ def main():
     for n in nodes:
         n.stop()
     sink.stop()
-    print("Zakończono. Pomiary zapisano w pomiary.csv")
+    print("Zakończono. Pomiary: pomiary.csv, zdarzenia: zdarzenia.csv")
 
 
 if __name__ == "__main__":

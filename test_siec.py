@@ -88,6 +88,36 @@ class TestCharakterystykaLiniowa(unittest.TestCase):
         self.assertTrue(all(abs(d - 0.3) < 0.002 for d in diffs))   # stały przyrost = A
 
 
+class TestWeryfikacjaLiniowosci(unittest.TestCase):
+    """Sprawdza, że narzędzie do weryfikacji (regresja) rozróżnia prostą od danych z szumem."""
+
+    def serie(self, szum, n=300):
+        cfg = {"T_START_MIN": 10, "T_START_MAX": 20, "NACHYLENIE_A": 0.1,
+               "PRZESUNIECIE_MIN": 0, "PRZESUNIECIE_MAX": 30, "SZUM": szum,
+               "OKRES_PROBKOWANIA": 1.0}
+        m = LinearTemperatureModel(cfg, random.Random(5))
+        ys = [m.next() for _ in range(n)]
+        return list(range(1, n + 1)), ys
+
+    def test_czysta_prosta_ma_r2_rowne_1(self):
+        from wykres_liniowosci import fit_line
+        xs, ys = self.serie(0.0)
+        a, b, r2 = fit_line(xs, ys)
+        self.assertAlmostEqual(a, 0.1, places=6)
+        self.assertGreater(r2, 0.999999)
+        self.assertLess(max(abs(y - (a * x + b)) for x, y in zip(xs, ys)), 1e-6)
+
+    def test_szum_jest_wykrywany(self):
+        from wykres_liniowosci import fit_line
+        xs, ys = self.serie(0.3)
+        a, b, r2 = fit_line(xs, ys)
+        res = [y - (a * x + b) for x, y in zip(xs, ys)]
+        std = (sum(r * r for r in res) / len(res)) ** 0.5
+        self.assertLess(r2, 0.9999)                 # R² wyraźnie poniżej 1
+        self.assertAlmostEqual(std, 0.3, delta=0.06)  # odchylenie reszt ~ SZUM
+        self.assertAlmostEqual(a, 0.1, delta=0.005)   # nachylenie nadal odtworzone
+
+
 class TestSiec(unittest.TestCase):
     def setUp(self):
         self.base = next_ports()

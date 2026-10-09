@@ -18,8 +18,10 @@ test_wezel_wylaczony_od_startu (test_siec.TestSiec.test_wezel_wylaczony_od_start
 test_wiele_sensorow_na_wielu_wezlach (test_siec.TestSiec.test_wiele_sensorow_na_wielu_wezlach) ... ok
 test_wylaczenie_i_wlaczenie_wezla (test_siec.TestSiec.test_wylaczenie_i_wlaczenie_wezla) ... ok
 test_wylaczony_wezel_zwalnia_miejsce_w_sieci (test_siec.TestSiec.test_wylaczony_wezel_zwalnia_miejsce_w_sieci) ... ok
+test_czysta_prosta_ma_r2_rowne_1 (test_siec.TestWeryfikacjaLiniowosci.test_czysta_prosta_ma_r2_rowne_1) ... ok
+test_szum_jest_wykrywany (test_siec.TestWeryfikacjaLiniowosci.test_szum_jest_wykrywany) ... ok
 
 ----------------------------------------------------------------------
-Ran 20 tests in 19.055s
+Ran 22 tests in 9.737s
 
 OK

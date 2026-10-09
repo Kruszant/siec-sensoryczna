@@ -1,0 +1,16 @@
+WERYFIKACJA LINIOWOŚCI (R², nachylenie, start w dopuszczalnym przedziale)
+sensor     n     a dop.   a plik        R²  max |reszta|  start OK  przerwy  przen.  dostęp.
+     1   261   -0.10800   -0.108  1.000000       0.00000       TAK        8       8    87.9%
+     2   271    0.18600    0.186  1.000000       0.00000       TAK        5       5    91.2%
+     3   253   -0.05900   -0.059  1.000000       0.00000       TAK        8       8    85.5%
+     4   280   -0.05500   -0.055  1.000000       0.00000       TAK        4       4    94.6%
+     5   253   -0.11200   -0.112  1.000000       0.00000       TAK        4       4    86.1%
+     6   279    0.10300    0.103  1.000000       0.00000       TAK        3       3    94.6%
+
+ZDARZENIA SIECI (zdarzenia.csv)
+  sensor_odlaczony       39
+  sensor_przeniesiony    32
+  sensor_przylaczony     7
+  wezel_dolaczyl         5
+  wezel_odrzucony        1
+  wezel_opuscil          5

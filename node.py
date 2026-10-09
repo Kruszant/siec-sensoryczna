@@ -142,7 +142,9 @@ class Node:
             self.deactivate()
             raise
         self.serving = True
-        threading.Thread(target=server.serve_forever, daemon=True).start()
+        # krótki poll_interval => wyłączenie węzła (shutdown) trwa ułamek sekundy
+        threading.Thread(target=server.serve_forever, kwargs={"poll_interval": 0.05},
+                         daemon=True).start()
 
     def deactivate(self):
         """Węzeł opuszcza sieć: zrywa połączenia z sensorami i ze zlewem."""
