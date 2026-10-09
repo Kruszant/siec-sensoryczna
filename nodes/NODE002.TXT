@@ -1,0 +1,3 @@
+# Plik konfiguracyjny węzła nr 002 (czytany co sekundę)
+ID=002
+AKTYWNY=1                 # 1 = węzeł działa, 0 = węzeł wyłączony (opuszcza sieć)

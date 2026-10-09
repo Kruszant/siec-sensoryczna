@@ -1,0 +1,25 @@
+test_kolejne_wartosci_na_prostej (test_siec.TestCharakterystykaLiniowa.test_kolejne_wartosci_na_prostej) ... ok
+test_start_losowy_w_przedziale (test_siec.TestCharakterystykaLiniowa.test_start_losowy_w_przedziale) ... ok
+test_niezgodny_numer (test_siec.TestPlikSensora.test_niezgodny_numer) ... ok
+test_wczytanie_parametrow (test_siec.TestPlikSensora.test_wczytanie_parametrow) ... ok
+test_zla_nazwa_pliku (test_siec.TestPlikSensora.test_zla_nazwa_pliku) ... ok
+test_auto_przylaczenie_i_dane_w_zlewie (test_siec.TestSiec.test_auto_przylaczenie_i_dane_w_zlewie) ... ok
+test_awaria_wezla_sensor_przechodzi_dalej (test_siec.TestSiec.test_awaria_wezla_sensor_przechodzi_dalej) ... ok
+test_duplikat_numeru_wezla (test_siec.TestSiec.test_duplikat_numeru_wezla) ... ok
+test_max_4_wezly (test_siec.TestSiec.test_max_4_wezly) ... ok
+test_odlaczanie_i_przenoszenie_miedzy_wezlami (test_siec.TestSiec.test_odlaczanie_i_przenoszenie_miedzy_wezlami) ... ok
+test_plik_wezla (test_siec.TestSiec.test_plik_wezla) ... ok
+test_przylaczenie_gdy_wezel_pojawi_sie_pozniej (test_siec.TestSiec.test_przylaczenie_gdy_wezel_pojawi_sie_pozniej) ... ok
+test_reczne_odlaczenie_i_przylaczenie (test_siec.TestSiec.test_reczne_odlaczenie_i_przylaczenie) ... ok
+test_reczne_przeniesienie_do_wezla (test_siec.TestSiec.test_reczne_przeniesienie_do_wezla) ... ok
+test_sensor_przechodzi_gdy_wezel_wylaczony (test_siec.TestSiec.test_sensor_przechodzi_gdy_wezel_wylaczony) ... ok
+test_steruj_cli (test_siec.TestSiec.test_steruj_cli) ... ok
+test_wezel_wylaczony_od_startu (test_siec.TestSiec.test_wezel_wylaczony_od_startu) ... ok
+test_wiele_sensorow_na_wielu_wezlach (test_siec.TestSiec.test_wiele_sensorow_na_wielu_wezlach) ... ok
+test_wylaczenie_i_wlaczenie_wezla (test_siec.TestSiec.test_wylaczenie_i_wlaczenie_wezla) ... ok
+test_wylaczony_wezel_zwalnia_miejsce_w_sieci (test_siec.TestSiec.test_wylaczony_wezel_zwalnia_miejsce_w_sieci) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 19.055s
+
+OK

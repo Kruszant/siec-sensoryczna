@@ -1,0 +1,20 @@
+# Plik konfiguracyjny sensora nr 002
+ID=002
+TYP=TEMPERATURA
+JEDNOSTKA=C
+# charakterystyka liniowa: T = T_START + A * (X0 + t)
+T_START_MIN=3        # losowa wartość startowa z przedziału
+T_START_MAX=8
+NACHYLENIE_A=0.024       # współczynnik kierunkowy prostej [°C/s]
+PRZESUNIECIE_MIN=0        # losowe przesunięcie X0 na charakterystyce [s]
+PRZESUNIECIE_MAX=45
+SZUM=0.0                  # opcjonalny szum gaussowski (0 = czysta prosta)
+OKRES_PROBKOWANIA=1.0     # pomiar co 1 s
+# --- STEROWANIE RĘCZNE (sensor czyta ten plik co sekundę) ---
+POLACZONY=1               # 1 = przyłączony, 0 = odłącz sensor od węzła
+WEZEL=0                   # 0 = dowolny węzeł, 1..4 = przyłącz / przenieś do tego węzła
+# --- opcjonalne odłączanie w losowych chwilach (0 = wyłączone) ---
+P_ODLACZENIA=0            # prawdopodobieństwo odłączenia w każdej sekundzie
+CZAS_ODLACZENIA_MIN=3     # [s]
+CZAS_ODLACZENIA_MAX=8     # [s]
+PRZENOSZENIE=1            # 1 = po odłączeniu przyłącz do innego węzła
